@@ -1,4 +1,4 @@
-# 갖 가지 못들 짬뽕
+# 갖 가지 봇들 짬뽕
 # 이 코드들에 대해 질문 금지
 # 알아서 사용하세요.
 
@@ -16,3 +16,6 @@ base - https://github.com/MenuDocs/Discord.JS-v11.6.1-Tutorials/tree/Episode-37
 7. https://github.com/ChristopherBThai/OwO-Bot-Data-Logging
 8. https://github.com/ChristopherBThai/Discord-OwO-Bot/blob/master/README.md
 9. https://github.com/CwhiteKJ/Miya
+
+# 이 코드들에 대해 질문 금지
+# 알아서 사용하세요.
