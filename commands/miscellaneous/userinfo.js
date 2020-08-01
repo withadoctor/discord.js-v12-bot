@@ -3,9 +3,9 @@ const { MessageEmbed } = require("discord.js")
 module.exports = {
     config: {
         name: "userinfo",
-        aliases: ["i", "ui", "ㅕㅑ", "ㅑ", "유저정보", "내정보"],
-        description: "특정유저의 정보보기",
-        usage: "userinfo <@username>",
+        aliases: ["i", "ui", "ㅕㅑ", "ㅑ", "내정보"],
+        description: "내정보보기",
+        usage: "userinfo",
         category: "miscellaneous", // help에서 표시 하지 않음
         accessableby: "Members", // help에서 표시 하지 않음
     },
