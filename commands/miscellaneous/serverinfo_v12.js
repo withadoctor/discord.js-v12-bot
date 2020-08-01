@@ -48,7 +48,7 @@ module.exports = {
 
 		const embed = new MessageEmbed()
 			.setDescription(`**Guild information for __${message.guild.name}__**`)
-			.setColor('BLUE')
+			.setColor(bot.colours.blue_light)
 			.setThumbnail(message.guild.iconURL({ dynamic: true }))
 			.addField('General', [
 				`**❯ Name:** ${message.guild.name}`,
