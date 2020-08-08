@@ -9,7 +9,7 @@ base - https://github.com/MenuDocs/Discord.JS-v11.6.1-Tutorials/tree/Episode-37
 
 ~~1. https://github.com/MenuDocs/Discord.js-v12-Tutorials/tree/Episode-6~~ 적용함  
 ~~2. https://github.com/CwhiteKJ/covid19-korea~~ 적용함  
-~~3. https://github.com/CwhiteKJ/Miya~~ 적용함  
+3. https://github.com/CwhiteKJ/Miya 라이센스 변경으로 인한 적용 해제  
 4. 내 강의들  
   
 ~~5. https://github.com/AnIdiotsGuide/discordjs-bot-guide/blob/master/coding-guides/using-emojis.md~~ (나중에 emoji 활용할 때)  
@@ -20,3 +20,9 @@ base - https://github.com/MenuDocs/Discord.JS-v11.6.1-Tutorials/tree/Episode-37
 
 # 이 코드들에 대해 질문 금지
 # 알아서 사용하세요.
+
+# change log
+
+### remove CwhiteKJ/Miya - 2020-08-09
+라이센스 변경에 의한.  
+CwhiteKJ님의 코드 제거 요청
