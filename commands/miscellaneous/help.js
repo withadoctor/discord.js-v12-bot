@@ -39,12 +39,15 @@ module.exports = {
             if(!command) return message.channel.send(embed.setTitle("Invalid Command.").setDescription(`Do \`${bot.prefix}help\` for the list of the commands.`))
             command = command.config
 
-            embed.setDescription(stripIndents`The bot's prefix is: \`${bot.prefix}\`\n
-            **명령어들:** ${command.name.slice(0, 1).toUpperCase() + command.name.slice(1)}${command.aliases ? ', '+command.aliases.join(", ") : ""}
+            embed.setDescription(stripIndents`
+            **명령어들:** \`${command.name}\`${command.aliases ? ', \`'+command.aliases.join("\`, \`")+'\`' : ""}
+            
             **설명:** ${command.description || "No Description provided."}
-            **사용법:** ${command.usage ? `\`${bot.prefix}${command.usage}\`` : "No Usage"}`)
-            // **Aliases:** ${command.aliases ? command.aliases.join(", ") : "None."}`)
-            // **Accessible by:** ${command.accessableby || "Members"}
+            
+            **사용법:** ${command.usage ? `\`${bot.prefix}${command.usage}\`` : "No Usage"}
+            
+            **사용가능한 사람:** ${command.accessableby || "Members"}`
+            )
 
             return message.channel.send(embed)
         }
