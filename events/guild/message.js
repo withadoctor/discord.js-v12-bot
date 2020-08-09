@@ -1,6 +1,8 @@
+const { addXp } = require("../../db/xp.js")
 
-module.exports = async (bot, message) => { 
+module.exports = async (bot, message) => {
     if(message.author.bot || message.channel.type == "dm") return;
+    addXp(bot, message);
 
     let args = message.content.slice(bot.prefix.length).trim().split(/ +/g);
     let cmd = args.shift().toLowerCase();
