@@ -17,21 +17,9 @@ module.exports = {
     core: async (bot) => {
         return new Promise((resolve, reject) => {
             request(url, (error, response, body) => {
-                const $ = cheerio.load(body)
-                const livedate = $("h5.s_title_in3 span.t_date");
-                const confirmedCase = $("li p.inner_value");
+                // const $ = cheerio.load(body)
+                let info = '', text1 = '', text2 = '', text3 = '';
             
-                let day_date = livedate[0].children[0].data;
-                let day_all = confirmedCase[0].children[0].data;
-                let day_oversea = confirmedCase[1].children[0].data;
-                let day_region = confirmedCase[2].children[0].data;
-            
-                let info = "누적 확진자 현황 : \`\`" + day_date + "\`\`";
-                let text1 = "신규 확진자 : \`\`" + day_all + "\`\`";
-                let text2 = "해외유입 : \`\`" + day_oversea + "\`\`";
-                let text3 = "국내발생 : \`\`" + day_region + "\`\`";
-
-
                 let oversea = response.body.split('DP_data.oversea.push').slice(1,8).map(x => x.split('("')[1].split('")')[0]); // 해외 유입
                 let region = response.body.split('DP_data.region.push').slice(1,8).map(x => x.split('("')[1].split('")')[0]); // 국내 발생
                 let date = response.body.split('DP_data.date.push').slice(1,8).map(x => x.split('("')[1].split('")')[0]); // 날짜
@@ -39,9 +27,13 @@ module.exports = {
                 covidList += `# 코로나 기록\n`;
                 covidList += `[날짜][신규확진자] <해외유입 국내발생>\n`;
                 covidList += date.map((x, i) => {
+                    if(i+1 == date.length) {
+                        info = "누적 확진자 현황 : \`\`" + '('+ x +'. 00시 기준)' + "\`\`";
+                        text1 = "신규 확진자 : \`\`+ " + (parseInt(oversea[i])+parseInt(region[i])) + "\`\`";
+                        text2 = "해외유입 : \`\`" + oversea[i] + "\`\`";
+                        text3 = "국내발생 : \`\`" + region[i] + "\`\`";
+                    }
                     return `[2020.${x}][${parseInt(oversea[i])+parseInt(region[i])}] <${oversea[i]} ${region[i]}>`;
-                    // return `[2020.${x}][${((parseInt(oversea[i])+parseInt(region[i]))+'').padStart(3, ' ')}] <${oversea[i].padStart(7, ' ')} ${region[i].padStart(8, ' ')}>`;
-                    // return [x, region[i], date[i]]
                 }).join('\n')
                 covidList += `\`\`\``;
             
